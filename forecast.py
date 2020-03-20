@@ -24,6 +24,7 @@ def forecast(ser, start_date, end_date):
     month = timedelta(days=31)
     fig, ax = plt.subplots(figsize=(10, 5))
     fig.suptitle("Airbnb Price Forecasts")
+    plt.ylabel("Price($)")
     plot_start = start_date - 2 * month
     plot_end = end_date + month
     ax.plot(ser[(ser.index.date >= plot_start) & (ser.index.date <= plot_end)], c="r")
